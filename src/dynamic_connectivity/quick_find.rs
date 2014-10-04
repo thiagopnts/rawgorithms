@@ -1,7 +1,7 @@
 
 use std::vec::Vec;
 
-struct QuickFind {
+pub struct QuickFind {
     id: Vec<int>
 }
 

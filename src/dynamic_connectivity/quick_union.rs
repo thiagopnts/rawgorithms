@@ -4,7 +4,7 @@ struct QuickUnion {
     id: Vec<uint>
 }
 
-impl QuickUnion {
+pub impl QuickUnion {
     fn new(n: uint) -> QuickUnion {
         QuickUnion{ id: Vec::from_fn(n, |i| i) }
     }

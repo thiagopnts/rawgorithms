@@ -8,7 +8,7 @@ struct WeightedQuickUnion {
     size: Vec<uint>
 }
 
-impl WeightedQuickUnion {
+pub impl WeightedQuickUnion {
     fn new(n: uint) -> WeightedQuickUnion {
         WeightedQuickUnion { id: Vec::from_fn(n, |i| i), size: Vec::from_fn(n, |i| 1) }
     }
@@ -31,6 +31,7 @@ impl WeightedQuickUnion {
         let current_j = self.size[j];
         if i == j { return; }
         if self.size[i] < self.size[j] {
+            // FIXME
             self.id.remove(i);
             self.id.insert(i, j);
             self.size.remove(j);

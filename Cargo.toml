@@ -1,6 +1,6 @@
 [package]
 
-name = "algo1"
+name = "algorithm.h"
 version = "0.0.1"
 authors = ["thiagopnts <thiagopnts@gmail.com>"]
 

@@ -1,10 +1,10 @@
 use std::vec::Vec;
 
-struct QuickUnion {
+pub struct QuickUnion {
     id: Vec<uint>
 }
 
-pub impl QuickUnion {
+impl QuickUnion {
     fn new(n: uint) -> QuickUnion {
         QuickUnion{ id: Vec::from_fn(n, |i| i) }
     }

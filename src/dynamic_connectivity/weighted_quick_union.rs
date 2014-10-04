@@ -3,12 +3,12 @@
 
 use std::vec::Vec;
 
-struct WeightedQuickUnion {
+pub struct WeightedQuickUnion {
     id: Vec<uint>,
     size: Vec<uint>
 }
 
-pub impl WeightedQuickUnion {
+impl WeightedQuickUnion {
     fn new(n: uint) -> WeightedQuickUnion {
         WeightedQuickUnion { id: Vec::from_fn(n, |i| i), size: Vec::from_fn(n, |i| 1) }
     }

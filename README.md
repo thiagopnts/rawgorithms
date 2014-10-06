@@ -10,8 +10,10 @@
 #### Sorting
 
 - Mergesort
+- Quicksort
 
 
 #### Utils
 
 - Knuth Shuffle
+- Is Sorted

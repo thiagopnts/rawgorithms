@@ -13,6 +13,7 @@
 - Quicksort
 - Insertion Sort
 - Selection Sort
+- Shellsort
 
 
 #### Utils

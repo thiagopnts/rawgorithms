@@ -11,6 +11,8 @@
 
 - Mergesort
 - Quicksort
+- Insertion Sort
+- Selection Sort
 
 
 #### Utils

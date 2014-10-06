@@ -1,3 +1,4 @@
+use utils::exch;
 
 pub fn quicksort<T: Clone + PartialOrd>(a: &mut Vec<T>) {
     // shuffle array
@@ -34,9 +35,3 @@ fn partition<T: Clone + PartialOrd>(a: &mut Vec<T>, lo: int, hi: int) -> int {
     j as int
 }
 
-fn exch<T: Clone + PartialOrd>(a: &mut Vec<T>, i: uint, j: uint) {
-    let from = a.get(i).clone();
-    let to = a.get(j).clone();
-    *a.get_mut(i) = to;
-    *a.get_mut(j) = from;
-}

@@ -1,7 +1,7 @@
-use utils::exch;
+use utils::{exch,shuffle};
 
 pub fn quicksort<T: Clone + PartialOrd>(a: &mut Vec<T>) {
-    // shuffle array
+    shuffle(a);
     let len = a.len() - 1;
     sort(a, 0, len as int);
 }

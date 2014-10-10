@@ -13,6 +13,13 @@ pub fn knuth_shuffle(n: uint) -> Vec<uint> {
     vec
 }
 
+pub fn shuffle<T>(v: &mut Vec<T>) where T: Clone, T: PartialOrd {
+    for i in range(0u, v.len()) {
+        let r = random::<uint>() % (i + 1);
+        exch(v, i, r);
+    }
+}
+
 pub fn exch<T: Clone + PartialOrd>(a: &mut Vec<T>, i: uint, j: uint) {
     let from = a.get(i).clone();
     let to = a.get(j).clone();

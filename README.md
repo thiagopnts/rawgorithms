@@ -1,5 +1,9 @@
 # Algorithm.h
 
+#### Data Structures
+
+- Stack
+
 #### Dynamic Connectivity
 
 - Quick Find

@@ -1,3 +1,4 @@
+#[deriving(Clone)]
 struct Node<T> {
     data: T,
     next: Option<Box<Node<T>>>
@@ -25,6 +26,13 @@ impl<T> Stack<T> {
             data: value,
             next: self.first.take()
         })
+    }
+
+    pub fn peek(&mut self) -> Option<&T> {
+        match self.first {
+            None => None,
+            Some(ref head) => Some(&head.data)
+        }
     }
 
     pub fn pop(&mut self) -> Option<T> {

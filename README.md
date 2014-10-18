@@ -4,6 +4,7 @@
 
 - Stack
 - Binary Heap
+- Priority Queue
 
 #### Disjoint-set
 

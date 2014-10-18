@@ -19,6 +19,7 @@
 - Insertion Sort
 - Selection Sort
 - Shellsort
+- Heapsort
 
 
 #### Utils

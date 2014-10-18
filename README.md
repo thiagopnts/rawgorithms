@@ -5,7 +5,7 @@
 - Stack
 - Binary Heap
 
-#### Dynamic Connectivity
+#### Disjoint-set
 
 - Quick Find
 - Quick Union

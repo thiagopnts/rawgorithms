@@ -1,12 +1,12 @@
 use std::vec::Vec;
 use utils::exch;
 
-pub struct BinaryHeap<T: PartialOrd + Clone> {
+pub struct BinaryHeap<T> where T: PartialOrd + Clone {
     pq: Vec<T>,
     n: uint
 }
 
-impl<T: PartialOrd + Clone> BinaryHeap<T> {
+impl<T> BinaryHeap<T> where T: PartialOrd + Clone {
     pub fn new(capacity: uint) -> BinaryHeap<T> {
         BinaryHeap { pq: Vec::new(), n: 0 }
     }
@@ -59,7 +59,3 @@ impl<T: PartialOrd + Clone> BinaryHeap<T> {
     }
 }
 
-#[test]
-fn test_binary_heap() {
-
-}

@@ -3,6 +3,7 @@
 #### Data Structures
 
 - Stack
+- Binary Heap
 
 #### Dynamic Connectivity
 

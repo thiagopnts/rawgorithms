@@ -9,7 +9,7 @@ pub struct WeightedQuickUnion {
 }
 
 impl WeightedQuickUnion {
-    fn new(n: uint) -> WeightedQuickUnion {
+    pub fn new(n: uint) -> WeightedQuickUnion {
         WeightedQuickUnion { id: Vec::from_fn(n, |i| i), size: Vec::from_fn(n, |i| 1) }
     }
 
@@ -20,11 +20,11 @@ impl WeightedQuickUnion {
         self.root(self.id[i])
     }
 
-    fn connected(&self, p: uint, q: uint) -> bool {
+    pub fn connected(&self, p: uint, q: uint) -> bool {
         self.root(p) == self.root(q)
     }
 
-    fn union(&mut self, p: uint, q: uint) {
+    pub fn union(&mut self, p: uint, q: uint) {
         let i = self.root(p);
         let j = self.root(q);
         let current_i = self.size[i];
@@ -43,19 +43,4 @@ impl WeightedQuickUnion {
             self.size.insert(i, current_j + current_i);
         }
     }
-}
-
-fn main() {
-    let mut q = WeightedQuickUnion::new(10);
-    q.union(4, 7);
-    q.union(3, 1);
-    q.union(1, 2);
-    q.union(6, 5);
-    q.union(9, 2);
-    q.union(8, 0);
-    q.union(6, 0);
-    q.union(4, 3);
-    q.union(9, 8);
-
-    println!("{}", q.id);
 }

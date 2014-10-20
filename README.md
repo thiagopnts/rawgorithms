@@ -5,13 +5,7 @@
 - Stack
 - Binary Heap
 - Priority Queue
-
-#### Disjoint-set
-
-- Quick Find
-- Quick Union
-- Weighted Quick Union
-
+- Disjoint-set
 
 #### Sorting
 

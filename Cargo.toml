@@ -1,6 +1,6 @@
 [package]
 
-name = "algorithm"
+name = "rawgorithms"
 version = "0.0.1"
-authors = ["thiagopnts <thiagopnts@gmail.com>"]
+authors = ["Thiago Pontes <email@thiago.me>"]
 

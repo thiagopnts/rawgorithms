@@ -3,11 +3,11 @@ use utils::exch;
 
 pub struct BinaryHeap<T> where T: PartialOrd + Clone {
     pq: Vec<T>,
-    n: uint
+    n: usize
 }
 
 impl<T> BinaryHeap<T> where T: PartialOrd + Clone {
-    pub fn new(capacity: uint) -> BinaryHeap<T> {
+    pub fn new(capacity: usize) -> BinaryHeap<T> {
         BinaryHeap { pq: Vec::new(), n: 0 }
     }
 
@@ -35,7 +35,7 @@ impl<T> BinaryHeap<T> where T: PartialOrd + Clone {
         max
     }
 
-    fn swim(&mut self, n: uint) {
+    fn swim(&mut self, n: usize) {
         let mut k = n;
         while k > 1 && self.pq[k / 2] < self.pq[k] {
             exch(&mut self.pq, k, k / 2);
@@ -43,7 +43,7 @@ impl<T> BinaryHeap<T> where T: PartialOrd + Clone {
         }
     }
 
-    fn sink(&mut self, k: uint) {
+    fn sink(&mut self, k: usize) {
         let mut i = k;
         while (2 * i) <= self.n {
             let mut j = 2 * i;

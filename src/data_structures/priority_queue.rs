@@ -13,7 +13,7 @@ impl<T> PriorityQueue<T> where T: PartialOrd + Clone {
         PriorityQueue { pq: Vec::new() }
     }
 
-    pub fn len(&self) -> uint {
+    pub fn len(&self) -> usize {
         self.pq.len()
     }
 
@@ -49,7 +49,7 @@ impl<T> PriorityQueue<T> where T: PartialOrd + Clone {
         self.pq.remove(min)
     }
 
-    fn max_index(&self) -> uint {
+    fn max_index(&self) -> usize {
         let mut max = 0u;
         for i in range(1, self.pq.len() - 1) {
             if self.pq[max] < self.pq[i + 1] {
@@ -59,7 +59,7 @@ impl<T> PriorityQueue<T> where T: PartialOrd + Clone {
         max
     }
 
-    fn min_index(&self) -> uint {
+    fn min_index(&self) -> usize {
         let mut min = 0u;
         for i in range(0, self.pq.len() - 1) {
             if self.pq[i] < self.pq[i + 1] {

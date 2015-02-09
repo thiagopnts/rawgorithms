@@ -11,7 +11,7 @@ impl<T> Node<T> {
 }
 
 pub struct Stack<T> {
-    length: uint,
+    length: usize,
     first: Option<Box<Node<T>>>
 }
 
@@ -22,10 +22,10 @@ impl<T> Stack<T> {
 
     pub fn push(&mut self, value: T) {
         self.length += 1;
-        self.first = Some(box Node {
+        self.first = Some(Box::new(Node {
             data: value,
             next: self.first.take()
-        })
+        }));
     }
 
     pub fn peek(&mut self) -> Option<&T> {
@@ -46,7 +46,7 @@ impl<T> Stack<T> {
         }
     }
 
-    pub fn len(&self) -> uint {
+    pub fn len(&self) -> usize {
         self.length
     }
 }

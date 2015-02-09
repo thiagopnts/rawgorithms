@@ -4,27 +4,27 @@
 use std::vec::Vec;
 
 pub struct WeightedQuickUnion {
-    id: Vec<uint>,
-    size: Vec<uint>
+    id: Vec<usize>,
+    size: Vec<usize>
 }
 
 impl WeightedQuickUnion {
-    pub fn new(n: uint) -> WeightedQuickUnion {
+    pub fn new(n: usize) -> WeightedQuickUnion {
         WeightedQuickUnion { id: Vec::from_fn(n, |i| i), size: Vec::from_fn(n, |i| 1) }
     }
 
-    fn root(&self, i: uint) -> uint {
+    fn root(&self, i: usize) -> usize {
         if i == self.id[i] {
             return i;
-        } 
+        }
         self.root(self.id[i])
     }
 
-    pub fn connected(&self, p: uint, q: uint) -> bool {
+    pub fn connected(&self, p: usize, q: usize) -> bool {
         self.root(p) == self.root(q)
     }
 
-    pub fn union(&mut self, p: uint, q: uint) {
+    pub fn union(&mut self, p: usize, q: usize) {
         let i = self.root(p);
         let j = self.root(q);
         let current_i = self.size[i];

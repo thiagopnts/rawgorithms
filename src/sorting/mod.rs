@@ -1,3 +1,4 @@
+#![feature(int_uint)]
 
 pub use self::mergesort::mergesort;
 pub use self::quicksort::quicksort;

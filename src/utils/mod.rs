@@ -1,3 +1,4 @@
+#![feature(int_uint)]
 use std::vec::Vec;
 use std::rand::random;
 

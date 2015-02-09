@@ -14,24 +14,24 @@ fn sort<T: Clone + PartialOrd>(a: &mut Vec<T>, lo: int, hi: int) {
 }
 
 fn partition<T: Clone + PartialOrd>(a: &mut Vec<T>, lo: int, hi: int) -> int {
-    let mut i = lo as uint;
-    let mut j = hi as uint;
+    let mut i = lo as usize;
+    let mut j = hi as usize;
     loop {
-        while a.get(i) < a.get(lo as uint) {
+        while a.get(i) < a.get(lo as usize) {
             i += 1;
-            if i == hi as uint { break; }
+            if i == hi as usize { break; }
         }
 
-        while a.get(lo as uint) < a.get(j) {
+        while a.get(lo as usize) < a.get(j) {
             j -= 1;
-            if j == lo as uint { break; }
+            if j == lo as usize { break; }
         }
 
         if i >= j { break; }
         exch(a, i, j);
     }
 
-    exch(a, lo as uint, j);
+    exch(a, lo as usize, j);
     j as int
 }
 

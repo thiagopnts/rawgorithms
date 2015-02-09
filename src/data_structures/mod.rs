@@ -1,3 +1,4 @@
+#![feature(int_uint)]
 
 pub use self::stack::Stack;
 pub use self::binary_heap::BinaryHeap;

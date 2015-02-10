@@ -6,7 +6,7 @@ pub struct QuickUnion {
 
 impl QuickUnion {
     pub fn new(n: usize) -> QuickUnion {
-        QuickUnion{ id: Vec::from_fn(n, |i| i) }
+        QuickUnion{ id: (0 .. n).map(|i| i).collect() }
     }
 
     fn root(&self, i: usize) -> usize {

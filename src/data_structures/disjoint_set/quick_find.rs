@@ -7,7 +7,7 @@ pub struct QuickFind {
 
 impl QuickFind {
     pub fn new(n: usize) -> QuickFind {
-        QuickFind{ id: Vec::from_fn(n, |i| i as int) }
+        QuickFind{ id: (0 .. n).map(|i| i).collect() }
     }
 
     pub fn connected(&self, p: usize, q: usize) -> bool {

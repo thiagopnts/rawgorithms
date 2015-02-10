@@ -16,7 +16,7 @@ pub fn heapsort<T>(array: &mut Vec<T>) where T: Clone + PartialOrd {
     }
 }
 
-fn sink<T>(array: &mut Vec<T>, k: uint, n: uint) where T: Clone + PartialOrd {
+fn sink<T>(array: &mut Vec<T>, k: usize, n: usize) where T: Clone + PartialOrd {
     let mut i = k;
     while (2 * i) <= n {
         let mut j = 2 * i;

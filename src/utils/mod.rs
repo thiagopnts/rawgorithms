@@ -4,7 +4,7 @@ use std::rand::random;
 
 // linear time shuffling algorithm
 pub fn knuth_shuffle(n: uint) -> Vec<uint> {
-    let mut vec = Vec::from_fn(n, |i| i + 1);
+    let mut vec = (0 .. n).map(|i| i + 1).collect();
     for i in range(0u, n) {
         let r = random::<uint>() % (i + 1);
         let value = vec[i];

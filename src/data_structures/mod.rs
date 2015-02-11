@@ -1,4 +1,4 @@
-#![feature(int_uint)]
+#![allow(dead_code)]
 
 pub use self::stack::Stack;
 pub use self::binary_heap::BinaryHeap;

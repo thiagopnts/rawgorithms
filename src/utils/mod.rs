@@ -1,6 +1,10 @@
-#![feature(int_uint)]
+#![allow(dead_code)]
+
+extern crate rand;
+
 use std::vec::Vec;
-use std::rand::random;
+
+use self::rand::random;
 
 // linear time shuffling algorithm
 pub fn knuth_shuffle(n: uint) -> Vec<uint> {

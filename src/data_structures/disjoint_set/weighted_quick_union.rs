@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-#![allow(unused_variable)]
 
 use std::vec::Vec;
 

@@ -7,5 +7,4 @@ mod utils;
 fn main() {
     let mut a = utils::knuth_shuffle(10);
     sorting::heapsort(&mut a);
-    let mut q = data_structures::QuickFind::new(1);
 }

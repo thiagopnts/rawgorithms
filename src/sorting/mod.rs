@@ -1,4 +1,4 @@
-#![feature(int_uint)]
+#![allow(dead_code)]
 
 pub use self::mergesort::mergesort;
 pub use self::quicksort::quicksort;

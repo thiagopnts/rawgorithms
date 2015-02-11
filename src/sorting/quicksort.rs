@@ -17,12 +17,12 @@ fn partition<T: Clone + PartialOrd>(a: &mut Vec<T>, lo: int, hi: int) -> int {
     let mut i = lo as usize;
     let mut j = hi as usize;
     loop {
-        while a.get(i) < a.get(lo as usize) {
+        while a[i] < a[lo as usize] {
             i += 1;
             if i == hi as usize { break; }
         }
 
-        while a.get(lo as usize) < a.get(j) {
+        while a[lo as usize] < a[j] {
             j -= 1;
             if j == lo as usize { break; }
         }

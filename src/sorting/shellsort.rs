@@ -10,7 +10,7 @@ pub fn shellsort<T: Clone + PartialOrd>(a: &mut Vec<T>) {
     while h >= 1 {
         for i in range(h, len) {
             let mut j: int = i;
-            while j >= h && a.get(j as usize) < a.get((j - h) as usize) {
+            while j >= h && a[j as usize] < a[(j - h) as usize] {
                 exch(a, j as usize, (j - h) as usize);
                 j -= h;
             }

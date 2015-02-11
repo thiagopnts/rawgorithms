@@ -16,7 +16,7 @@ fn sort<T : Clone + PartialOrd>(a: &mut Vec<T>, aux: &mut Vec<T>, lo: usize, hi:
 
 fn merge<T : Clone + PartialOrd>(a: &mut Vec<T>, aux: &mut Vec<T>, lo: usize, mid: usize, hi: usize) {
     for k in range(lo, hi + 1) {
-        *aux.get_mut(k) = a.get(k).clone();
+        aux[k] = a[k].clone();
     }
 
     let mut i = lo;
@@ -24,16 +24,16 @@ fn merge<T : Clone + PartialOrd>(a: &mut Vec<T>, aux: &mut Vec<T>, lo: usize, mi
 
     for k in range(lo, hi + 1) {
         if i > mid {
-            *a.get_mut(k) = aux.get(j).clone();
+            a[k] = aux[j].clone();
             j += 1
         } else if j > hi {
-            *a.get_mut(k) = aux.get(i).clone();
+            a[k] = aux[i].clone();
             i += 1
-        } else if aux.get(j) < aux.get(i) {
-            *a.get_mut(k) = aux.get(j).clone();
+        } else if aux[j] < aux[i] {
+            a[k] = aux[j].clone();
             j += 1
         } else {
-            *a.get_mut(k) = aux.get(i).clone();
+            a[k] = aux[i].clone();
             i += 1
         }
     }

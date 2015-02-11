@@ -2,7 +2,7 @@
 use std::vec::Vec;
 
 pub struct QuickFind {
-    id: Vec<int>
+    id: Vec<usize>
 }
 
 impl QuickFind {
@@ -19,7 +19,7 @@ impl QuickFind {
         let qid = self.id[q];
         for i in range(0, self.id.len()) {
             if self.id[i] == pid {
-                *self.id.get_mut(i) = qid;
+                self.id[i] = qid;
             }
         }
     }

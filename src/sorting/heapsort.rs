@@ -20,10 +20,10 @@ fn sink<T>(array: &mut Vec<T>, k: usize, n: usize) where T: Clone + PartialOrd {
     let mut i = k;
     while (2 * i) <= n {
         let mut j = 2 * i;
-        if j < n && array.get(j) < array.get(j + 1) {
+        if j < n && array[j] < array[j + 1] {
             j += 1
         }
-        if !(array.get(i) < array.get(j)) {
+        if !(array[i] < array[j]) {
             break;
         }
         exch(array, i, j);

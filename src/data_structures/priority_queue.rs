@@ -25,28 +25,28 @@ impl<T> PriorityQueue<T> where T: PartialOrd + Clone {
         self.pq.push(value);
     }
 
-    pub fn max(&mut self) -> Option<&T> {
+    pub fn max(&mut self) -> Option<T> {
         if self.is_empty() { return None }
         let max = self.max_index();
-        Some(self.pq.get(max))
+        Some(self.pq[max].clone())
     }
 
-    pub fn min(&mut self) -> Option<&T> {
+    pub fn min(&mut self) -> Option<T> {
         if self.is_empty() { return None }
         let min = self.min_index();
-        Some(self.pq.get(min))
+        Some(self.pq[min].clone())
     }
 
     pub fn delete_max(&mut self) -> Option<T> {
         if self.is_empty() { return None; }
         let max = self.max_index();
-        self.pq.remove(max)
+        Some(self.pq.remove(max).clone())
     }
 
     pub fn delete_min(&mut self) -> Option<T> {
         if self.is_empty() { return None; }
         let min = self.min_index();
-        self.pq.remove(min)
+        Some(self.pq.remove(min).clone())
     }
 
     fn max_index(&self) -> usize {

@@ -32,7 +32,7 @@ impl<T> BinaryHeap<T> where T: PartialOrd + Clone {
         let max = self.pq.remove(1);
         self.n -= 1;
         self.sink(1);
-        max
+        Some(max)
     }
 
     fn swim(&mut self, n: usize) {

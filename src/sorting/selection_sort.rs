@@ -6,7 +6,7 @@ pub fn selection_sort<T: Clone + PartialOrd>(a: &mut Vec<T>) {
     for i in range(0, len) {
         min = i;
         for j in range(i + 1, len) {
-            if a.get(j) < a.get(min) {
+            if a[j] < a[min] {
                 min = j;
             }
         }

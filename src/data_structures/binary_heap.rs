@@ -7,7 +7,7 @@ pub struct BinaryHeap<T> where T: PartialOrd + Clone {
 }
 
 impl<T> BinaryHeap<T> where T: PartialOrd + Clone {
-    pub fn new(capacity: usize) -> BinaryHeap<T> {
+    pub fn new() -> BinaryHeap<T> {
         BinaryHeap { pq: Vec::new(), n: 0 }
     }
 

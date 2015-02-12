@@ -1,4 +1,5 @@
-#![feature(int_uint)]
+#![feature(int_uint, core)]
+#![allow(dead_code)]
 mod sorting;
 mod data_structures;
 mod utils;

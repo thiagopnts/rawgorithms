@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-
 pub use self::mergesort::mergesort;
 pub use self::quicksort::quicksort;
 pub use self::selection_sort::selection_sort;

@@ -1,4 +1,3 @@
-
 // in-place merge sort implementation
 pub fn mergesort<T : Clone + PartialOrd>(a: &mut Vec<T>) {
     let mut aux = a.clone();

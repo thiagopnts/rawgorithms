@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-
 pub use self::stack::Stack;
 pub use self::binary_heap::BinaryHeap;
 pub use self::priority_queue::PriorityQueue;

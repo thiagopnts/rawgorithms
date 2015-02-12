@@ -9,7 +9,7 @@ pub struct WeightedQuickUnion {
 
 impl WeightedQuickUnion {
     pub fn new(n: usize) -> WeightedQuickUnion {
-        WeightedQuickUnion { id: (0 .. n).map(|i| i).collect(), size: (0 .. n).map(|i| 1).collect() }
+        WeightedQuickUnion { id: (0 .. n).map(|i| i).collect(), size: (0 .. n).map(|_| 1).collect() }
     }
 
     fn root(&self, i: usize) -> usize {

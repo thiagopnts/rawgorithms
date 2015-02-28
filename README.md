@@ -1,4 +1,5 @@
-# Algorithm.h
+# Rawgorithms
+[![Build Status](https://travis-ci.org/thiagopnts/rawgorithms.png?branch=master)](https://travis-ci.org/thiagopnts/rawgorithms)
 
 #### Data Structures
 

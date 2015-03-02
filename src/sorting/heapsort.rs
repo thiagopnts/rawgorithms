@@ -30,3 +30,20 @@ fn sink<T>(array: &mut Vec<T>, k: usize, n: usize) where T: Clone + PartialOrd {
         i = j
     }
 }
+
+#[cfg(test)]
+mod test {
+    use super::heapsort;
+
+    #[test]
+    fn test_heapsort() {
+        // heapsort works only for 1 index-based arrays, so it will ignore the first element
+        let mut shuffled_array = vec![1, 2, 1, 3, 5, 4, 6, 8, 9, 7];
+
+        heapsort(&mut shuffled_array);
+
+        for value in range(1, 10) {
+            assert!(value == shuffled_array[value]);
+        }
+    }
+}

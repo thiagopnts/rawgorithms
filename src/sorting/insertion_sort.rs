@@ -13,3 +13,19 @@ pub fn insertion_sort<T: Clone + PartialOrd>(a: &mut Vec<T>) {
         }
     }
 }
+
+#[cfg(test)]
+mod test {
+    use super::insertion_sort;
+    use utils::knuth_shuffle;
+
+    #[test]
+    fn test_insertion_sort() {
+        let mut shuffled_array = knuth_shuffle(100);
+        insertion_sort(&mut shuffled_array);
+
+        for value in range(1, 100) {
+            assert!(value == shuffled_array[value - 1]);
+        }
+    }
+}

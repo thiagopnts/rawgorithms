@@ -70,6 +70,7 @@ impl<T> PriorityQueue<T> where T: PartialOrd + Clone {
     }
 }
 
+#[cfg(test)]
 mod test {
     use super::PriorityQueue;
 

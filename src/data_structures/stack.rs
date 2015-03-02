@@ -51,3 +51,51 @@ impl<T> Stack<T> {
     }
 }
 
+#[cfg(test)]
+mod test {
+    use super::Stack;
+
+    #[test]
+    fn test_push() {
+        let mut stack = Stack::new();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        assert_eq!(3, stack.len());
+    }
+
+    #[test]
+    fn test_pop() {
+        let mut stack = Stack::new();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        assert_eq!(3, stack.len());
+
+        let last = stack.pop().unwrap();
+        assert_eq!(3, last);
+        assert_eq!(2, stack.len());
+
+        let last = stack.pop().unwrap();
+        assert_eq!(2, last);
+
+        assert_eq!(1, stack.len());
+    }
+
+    #[test]
+    fn test_peek() {
+        let mut stack = Stack::new();
+        stack.push(3);
+        stack.push(10);
+        stack.push(1);
+        assert_eq!(*stack.peek().unwrap(), 1);
+        assert_eq!(stack.len(), 3);
+    }
+
+    #[test]
+    fn test_pop_empty_stack() {
+        let mut stack: Stack<String> = Stack::new();
+        assert_eq!(stack.pop(), None);
+    }
+}
+

@@ -18,3 +18,19 @@ pub fn shellsort<T: Clone + PartialOrd>(a: &mut Vec<T>) {
         h = h / 3;
     }
 }
+
+#[cfg(test)]
+mod test {
+    use super::shellsort;
+    use utils::knuth_shuffle;
+
+    #[test]
+    fn test_shellsort() {
+        let mut shuffled_array = knuth_shuffle(100);
+        shellsort(&mut shuffled_array);
+
+        for value in range(1, 100) {
+            assert_eq!(value, shuffled_array[value - 1]);
+        }
+    }
+}

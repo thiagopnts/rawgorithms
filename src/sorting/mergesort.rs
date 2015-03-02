@@ -38,4 +38,19 @@ fn merge<T : Clone + PartialOrd>(a: &mut Vec<T>, aux: &mut Vec<T>, lo: usize, mi
     }
 }
 
+#[cfg(test)]
+mod test {
+    use super::mergesort;
+    use utils::knuth_shuffle;
+
+    #[test]
+    fn test_mergesort() {
+        let mut shuffled_array = knuth_shuffle(100);
+        mergesort(&mut shuffled_array);
+
+        for value in range(1, 100) {
+            assert!(value == shuffled_array[value - 1]);
+        }
+    }
+}
 

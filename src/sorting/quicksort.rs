@@ -35,3 +35,19 @@ fn partition<T: Clone + PartialOrd>(a: &mut Vec<T>, lo: int, hi: int) -> int {
     j as int
 }
 
+#[cfg(test)]
+mod test {
+    use super::quicksort;
+    use utils::knuth_shuffle;
+
+    #[test]
+    fn test_quicksort() {
+        let mut shuffled_array = knuth_shuffle(100);
+        quicksort(&mut shuffled_array);
+
+        for value in range(1, 100) {
+            assert_eq!(value, shuffled_array[value - 1]);
+        }
+    }
+}
+

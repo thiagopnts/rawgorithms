@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-#![feature(int_uint, core)]
 
 extern crate rand;
 

@@ -50,8 +50,8 @@ impl<T> PriorityQueue<T> where T: PartialOrd + Clone {
     }
 
     fn max_index(&self) -> usize {
-        let mut max = 0u;
-        for i in range(1, self.pq.len() - 1) {
+        let mut max = 0;
+        for i in 1..self.pq.len() - 1 {
             if self.pq[max] < self.pq[i] {
                 max = i;
             }
@@ -60,8 +60,8 @@ impl<T> PriorityQueue<T> where T: PartialOrd + Clone {
     }
 
     fn min_index(&self) -> usize {
-        let mut min = 0u;
-        for i in range(0, self.pq.len() - 1) {
+        let mut min = 0;
+        for i in 0..self.pq.len() - 1 {
             if self.pq[i] < self.pq[i + 1] {
                 min = i;
             }

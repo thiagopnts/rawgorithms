@@ -42,7 +42,7 @@ mod test {
 
         heapsort(&mut shuffled_array);
 
-        for value in range(1, 10) {
+        for value in 1..10 {
             assert!(value == shuffled_array[value]);
         }
     }

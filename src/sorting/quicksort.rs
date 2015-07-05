@@ -3,17 +3,17 @@ use utils::{exch,shuffle};
 pub fn quicksort<T: Clone + PartialOrd>(a: &mut Vec<T>) {
     shuffle(a);
     let len = a.len() - 1;
-    sort(a, 0, len as int);
+    sort(a, 0, len as i64);
 }
 
-fn sort<T: Clone + PartialOrd>(a: &mut Vec<T>, lo: int, hi: int) {
+fn sort<T: Clone + PartialOrd>(a: &mut Vec<T>, lo: i64, hi: i64) {
     if hi <= lo { return; }
     let j = partition(a, lo, hi);
     sort(a, lo, j - 1);
     sort(a, j + 1, hi);
 }
 
-fn partition<T: Clone + PartialOrd>(a: &mut Vec<T>, lo: int, hi: int) -> int {
+fn partition<T: Clone + PartialOrd>(a: &mut Vec<T>, lo: i64, hi: i64) -> i64 {
     let mut i = lo as usize;
     let mut j = hi as usize;
     loop {
@@ -32,7 +32,7 @@ fn partition<T: Clone + PartialOrd>(a: &mut Vec<T>, lo: int, hi: int) -> int {
     }
 
     exch(a, lo as usize, j);
-    j as int
+    j as i64
 }
 
 #[cfg(test)]
@@ -45,7 +45,7 @@ mod test {
         let mut shuffled_array = knuth_shuffle(100);
         quicksort(&mut shuffled_array);
 
-        for value in range(1, 100) {
+        for value in 1..100 {
             assert_eq!(value, shuffled_array[value - 1]);
         }
     }

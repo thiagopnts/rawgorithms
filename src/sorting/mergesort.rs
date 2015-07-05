@@ -7,21 +7,21 @@ pub fn mergesort<T : Clone + PartialOrd>(a: &mut Vec<T>) {
 
 fn sort<T : Clone + PartialOrd>(a: &mut Vec<T>, aux: &mut Vec<T>, lo: usize, hi: usize) {
     if hi <= lo { return; }
-    let mid = lo + (hi - lo) / 2u;
+    let mid = lo + (hi - lo) / 2;
     sort(a, aux, lo, mid);
     sort(a, aux, mid + 1, hi);
     merge(a, aux, lo, mid, hi);
 }
 
 fn merge<T : Clone + PartialOrd>(a: &mut Vec<T>, aux: &mut Vec<T>, lo: usize, mid: usize, hi: usize) {
-    for k in range(lo, hi + 1) {
+    for k in lo..hi + 1 {
         aux[k] = a[k].clone();
     }
 
     let mut i = lo;
     let mut j = mid + 1;
 
-    for k in range(lo, hi + 1) {
+    for k in lo..hi + 1 {
         if i > mid {
             a[k] = aux[j].clone();
             j += 1
@@ -48,7 +48,7 @@ mod test {
         let mut shuffled_array = knuth_shuffle(100);
         mergesort(&mut shuffled_array);
 
-        for value in range(1, 100) {
+        for value in 1..100 {
             assert!(value == shuffled_array[value - 1]);
         }
     }

@@ -17,7 +17,7 @@ impl QuickFind {
     pub fn union(&mut self, p: usize, q: usize) {
         let pid = self.id[p];
         let qid = self.id[q];
-        for i in range(0, self.id.len()) {
+        for i in 0..self.id.len() {
             if self.id[i] == pid {
                 self.id[i] = qid;
             }
